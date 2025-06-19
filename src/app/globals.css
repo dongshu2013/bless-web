@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #131313;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: #6a2fe7;
+}
+
+@theme {
+  --header-height-mobile: 70px;
+  --header-height: 120px;
+  --text-default: #22282b;
+  --text-default-2: #7e8492;
+  --text-light1: #8e949e;
+
+  --bg1: #f8f9fb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #131313;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.transition-common {
+  transition: all ease-out 0.25s;
+}
+
+@layer utilities {
+  .clickable-effect {
+    @apply cursor-pointer hover:opacity-80 active:opacity-60;
+  }
+
+  .button-text-small {
+    @apply text-[10px] leading-normal md:text-[16px];
+  }
+
+  .button-text {
+    @apply text-[14px] leading-normal md:text-[16px];
+  }
+
+  .primary-button-container {
+    @apply relative cursor-pointer px-5 bg-[#6E69FF] border border-[#B1D0F8] flex items-center justify-center rounded-lg drop-shadow-[0px_0px_34px_rgba(80,133,255,0.2)] overflow-hidden
+    h-[36px] md:h-[54px];
+  }
+
+  .secondary-button-container {
+    @apply relative cursor-pointer px-5 bg-white border border-[#D0D0FF] flex items-center justify-center rounded-lg overflow-hidden
+    h-[36px] md:h-[54px];
+  }
+
+  .primary-button-container-rounded {
+    @apply relative cursor-pointer px-5 bg-[#6E69FF] border border-[#B1D0F8] flex items-center justify-center rounded-full drop-shadow-[0px_0px_34px_rgba(80,133,255,0.2)] overflow-hidden
+    h-[45px] md:h-[54px];
+  }
+
+  .secondary-button-container-rounded {
+    @apply relative cursor-pointer px-5 bg-white border border-[#D0D0FF] flex items-center justify-center rounded-full overflow-hidden
+    h-[45px] md:h-[54px];
+  }
+}
