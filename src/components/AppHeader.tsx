@@ -129,13 +129,6 @@ export const AppHeader = () => {
         </div>
       </ContentWrapper>
 
-      <div
-        className="self-stretch h-[0.5px]"
-        style={{
-          background:
-            "linear-gradient(to right, #ffffff00, #ffffff3D, #ffffff00)",
-        }}
-      />
     </div>
   );
 };
