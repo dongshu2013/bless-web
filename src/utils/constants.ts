@@ -1,5 +1,5 @@
 export const SOCIAL_LINKS = {
-  x: "",
+  x: "https://x.com/Buzzlineai",
   linkedin: "",
   ins: "",
   facebook: "",

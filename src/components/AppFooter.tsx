@@ -43,7 +43,7 @@ export const AppFooter = () => {
             </div>
 
             <div className="flex items-center gap-2 mt-8 md:mt-6">
-              <Image
+              {/* <Image
                 src="/images/social/ins.svg"
                 alt="ins"
                 width={40}
@@ -57,23 +57,25 @@ export const AppFooter = () => {
                 width={40}
                 height={40}
                 className="cursor-pointer active:scale-95 transition-common w-8 h-8"
-              />
+              /> */}
 
-              <Image
-                src="/images/social/twitter.svg"
-                alt="twitter"
-                width={40}
-                height={40}
-                className="cursor-pointer active:scale-95 transition-common w-8 h-8"
-              />
+              <Link href={SOCIAL_LINKS.x} target="_blank">
+                <Image
+                  src="/images/social/twitter.svg"
+                  alt="twitter"
+                  width={40}
+                  height={40}
+                  className="cursor-pointer active:scale-95 transition-common w-8 h-8"
+                />
+              </Link>
 
-              <Image
+              {/* <Image
                 src="/images/social/linkedin.svg"
                 alt="linkedin"
                 width={40}
                 height={40}
                 className="cursor-pointer active:scale-95 transition-common w-8 h-8"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -87,9 +89,9 @@ export const AppFooter = () => {
             ©2025 Buzzline All right reserved.
           </div>
 
-          <div className={classNames("leading-normal ")}>
+          <Link href="/terms" className={classNames("leading-normal ")}>
             Privacy and Policy
-          </div>
+          </Link>
         </div>
       </ContentWrapper>
     </div>
