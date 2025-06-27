@@ -1,134 +1,68 @@
 "use client";
 
-import { WEBSITE_LINKS } from "@/utils/constants";
-import { bold500Font } from "@/utils/fontUtils";
 import classNames from "classnames";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ContentWrapper } from "./ContentWrapper";
 
 export const AppHeader = () => {
-  const [hide, setHide] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Common scroll listener
-  useEffect(() => {
-    var lastScrollTop = 0;
-    const scrollThreshold = 50; // Set your desired threshold in pixels
-
-    const scrollListener = () => {
-      // or window.addEventListener("scroll"....
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-
-      // Update scrolled state based on threshold
-      setIsScrolled(st > scrollThreshold);
-
-      if (st > lastScrollTop) {
-        // console.log("downscroll");
-        setHide(true);
-        // downscroll code
-      } else if (st < lastScrollTop) {
-        // console.log("upscroll");
-        setHide(false);
-        // upscroll code
-      } // else was horizontal scroll
-      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    };
-    // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-    window.addEventListener("scroll", scrollListener, false);
-    return () => {
-      window.removeEventListener("scroll", scrollListener);
-    };
-  }, []);
-
   return (
     <div
       className={twMerge(
-        "h-[var(--header-height-mobile)] md:h-[var(--header-height)]",
-        "z-20 fixed left-0 right-0",
-        "top-0 md:top-6",
-        // hide ? "-translate-y-[var(--header-height)]" : "",
-        "transition-common"
+        "h-[60px] md:h-[90px] bg-[#FBE791] text-black border-b border-b-[#00000033] md:border-b-0"
       )}
     >
-      <ContentWrapper className="px-0 xl:px-[90px]">
-        <div className="flex items-center justify-between bg-white md:rounded-[16px] border border-[#D0D0FF] py-2">
-          <div className="flex items-center">
+      <ContentWrapper className="px-4 xl:px-[40px] 2xl:px-[80px]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Menu className="w-6 text-[#00494F] cursor-pointer md:hidden" strokeWidth={3} />
+
             <Link href="/">
               <Image
-                src="logo-with-text.svg"
+                src="/logo.png"
                 alt="logo"
                 width={200}
-                height={60}
-                className="w-[100px] xl:w-[210px] ml-6"
+                height={200}
+                className="w-[46px] md:w-[72px]"
               />
             </Link>
+          </div>
 
-            <div className="md:flex hidden items-center ml-5">
-              <div className="h-5 w-[1px] bg-[#9D9D9D]" />
-
-              <Link href="#about">
-                <div
-                  className={classNames(
-                    "ml-8 text-[16px] leading-normal ",
-                    bold500Font.className
-                  )}
-                >
-                  About
-                </div>
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center gap-8 text-[16px] font-medium">
+              <Link href="/">
+                <div className={classNames("")}>首页</div>
               </Link>
 
-              <Link href="#features">
-                <div
-                  className={classNames(
-                    "ml-8 text-[16px] leading-normal ",
-                    bold500Font.className
-                  )}
-                >
-                  Features
-                </div>
+              <Link href="#events">
+                <div className={classNames("")}>活动</div>
               </Link>
 
-              <Link href={WEBSITE_LINKS.docs} target="_blank">
-                <div
-                  className={classNames(
-                    "ml-8 text-[16px] leading-normal ",
-                    bold500Font.className
-                  )}
-                >
-                  How to play
-                </div>
+              <Link href="#grow-road">
+                <div className={classNames("")}>灵性成长路径</div>
+              </Link>
+
+              <Link href="#service">
+                <div className={classNames("")}>服务内容</div>
+              </Link>
+
+              <Link href="#comments">
+                <div className={classNames("")}>用户评价</div>
+              </Link>
+
+              <Link href="#qas">
+                <div className={classNames("")}>常见问题</div>
+              </Link>
+
+              <Link href="#contact">
+                <div className={classNames("")}>联系我们</div>
               </Link>
             </div>
           </div>
-
-          <Link href={WEBSITE_LINKS.app} target="_blank">
-            <div className="mr-4 primary-button-container">
-              <div
-                className="absolute inset-0 w-full h-full rounded-full"
-                style={{
-                  background: "#82E4F8",
-                  filter: "blur(39px)",
-                  opacity: 0.6,
-                  zIndex: -1,
-                }}
-              />
-
-              <div
-                className={classNames(
-                  "button-text-small text-white relative z-10",
-                  bold500Font.className
-                )}
-              >
-                Launch App
-              </div>
-            </div>
-          </Link>
         </div>
       </ContentWrapper>
-
     </div>
   );
 };

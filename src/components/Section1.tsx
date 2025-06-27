@@ -1,97 +1,72 @@
 import Image from "next/image";
-import { ContentWrapper } from "./ContentWrapper";
-import classNames from "classnames";
-import { bold500Font } from "@/utils/fontUtils";
-import Link from "next/link";
-import { WEBSITE_LINKS } from "@/utils/constants";
 
 export const Section1 = () => {
   return (
-    <ContentWrapper className="px-0 xl:px-[80px] mt-[var(--header-height-mobile)] md:mt-[var(--header-height)] pb-10 xl:pb-10 z-10">
-      <div className="mt-[30px] md:mt-[54px] flex flex-col items-center justify-center">
+    <div className="">
+      <div className="bg-[#FBE791] flex flex-col items-center">
+        <div className="pt-[58px] text-center text-[60px] font-semibold text-[var(--color-primary)]">
+          为你挚爱的人，点一盏真正的心灯
+        </div>
+
+        <div className="mt-5 text-[var(--color-primary)]/80 text-[24px]">
+          全球华人专属真实祈福平台｜真实寺庙｜视频记录｜人文关怀
+        </div>
+
         <Image
-          src="/images/kol-card.png"
-          alt="section1-bg"
-          width={289}
-          height={51}
-          className="w-[184px] md:w-[289px] h-auto"
+          src="/images/god.png"
+          alt="god"
+          width={1100}
+          height={640}
+          className="mt-[70px] w-[1100px] h-auto"
         />
 
-        <div
-          className={classNames(
-            "mt-5 text-[28px] md:text-[72px] text-center leading-none",
-            bold500Font.className
-          )}
+        <div className="-mt-[400px] relative z-10">
+          <div className="flex">
+            <Image
+              src="/images/god-bottom-line1.svg"
+              alt="god"
+              width={960}
+              height={355}
+              className="flex-1 h-auto"
+            />
+
+            <Image
+              src="/images/god-bottom-line2.svg"
+              alt="god"
+              width={960}
+              height={355}
+              className="flex-1 h-auto"
+            />
+          </div>
+        </div>
+
+        {/* <div
+          style={{
+            backgroundImage: "url('/images/page-bg.svg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="w-[100%] h-[1000px] z-[20] relative"
         >
-          Activate Your Intelligent <br />
-          Influence
-        </div>
-
-        <div
-          className={classNames(
-            "mt-4 text-[16px] text-center px-4 leading-normal md:leading-normal text-[var(--text-default-2)]"
-          )}
-        >
-          Harness AI-driven task automation and KOL synergy to transform every
-          interaction into on-chain value—welcome to the future of crypto
-          social.
-        </div>
-
-        <div className="self-stretch md:self-center mx-4 mt-8 flex items-center gap-3 md:gap-6">
-          <Link
-            href={WEBSITE_LINKS.app}
-            target="_blank"
-            className="flex-1 md:flex-none"
-          >
-            <div className="primary-button-container-rounded">
-              <div
-                className="absolute inset-0 w-full h-full rounded-full"
-                style={{
-                  background: "#82E4F8",
-                  filter: "blur(39px)",
-                  opacity: 0.6,
-                  zIndex: -1,
-                }}
-              />
-              <div
-                className={classNames(
-                  "button-text text-white relative z-10",
-                  bold500Font.className
-                )}
-              >
-                Get Started
-              </div>
-            </div>
-          </Link>
-
-          <Link
-            href={WEBSITE_LINKS.docs}
-            target="_blank"
-            className="flex-1 md:flex-none"
-          >
-            <div className="secondary-button-container-rounded">
-              <div
-                className={classNames(
-                  "button-text relative z-10",
-                  bold500Font.className
-                )}
-              >
-                Learn More
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="lg:w-[1024px] h-auto mt-[56px] mx-4 lg:mx-0">
-          <Image
-            src="/images/buzzline-screenshot.png"
-            alt="buzzline-screenshot"
-            width={1084}
-            height={674}
-            className="w-full"
-          />
-        </div>
+          <div></div>
+        </div> */}
       </div>
-    </ContentWrapper>
+
+      <div
+        className="relative h-[355px] self-stretch w-full"
+        style={{
+          marginTop: "calc(-50vw*355/960)",
+        }}
+      >
+        <Image
+          src="/images/page-bg.svg"
+          alt="background"
+          width={1921}
+          height={6320}
+          className="w-full h-auto top-0 left-0 right-0"
+        />
+      </div>
+    </div>
   );
 };

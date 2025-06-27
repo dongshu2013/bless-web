@@ -18,7 +18,7 @@ export const ContentWrapper = ({
     >
       <div
         className={twMerge(
-          "max-w-[1440px] w-full xl:w-[1440px] 2xl:w-[1440px] xl:px-10 px-4 md:px-5",
+          "max-w-[1440px] w-full xl:w-[1440px] 2xl:w-[1440px] px-4 md:px-5 xl:px-10",
           className
         )}
       >

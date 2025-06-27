@@ -7,8 +7,8 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Buzzline",
-  description: "Engage with tweets and earn BUZZ tokens using AI",
+  title: "祈福",
+  description: "全球华人专属真实祈福平台｜真实寺庙｜视频记录｜人文关怀",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={classNames(
           `antialiased text-[var(--text-default)]`,
-          "leading-normal",
+          "leading-none",
           regularFont.className
         )}
       >
@@ -36,7 +36,7 @@ export default function RootLayout({
 
         {children}
 
-        <AppFooter />
+        {/* <AppFooter /> */}
       </body>
     </html>
   );

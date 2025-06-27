@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fbe791;
+  /* background: radial-gradient(
+    101.39% 19.82% at 51.51% 4.86%,
+    rgba(0, 73, 79, 0.85) 24%,
+    rgba(0, 50, 59, 0.85) 51%,
+    rgba(0, 33, 39, 0.85) 100%
+  ); */
+
   --foreground: #131313;
 }
 
@@ -10,10 +17,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #6a2fe7;
+  --color-primary: #00494f;
 }
 
-@theme {
+@theme inline {
   --header-height-mobile: 70px;
   --header-height: 120px;
   --text-default: #22282b;
@@ -21,11 +28,16 @@
   --text-light1: #8e949e;
 
   --bg1: #f8f9fb;
+
+  --revelant-cols-3: repeat(3, 380px);
+  --revelant-cols-1: repeat(1, 1fr);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    /* --background: #fbe791; */
+    /* background: radial-gradient(101.39% 19.82% at 51.51% 4.86%, rgba(0, 73, 79, 0.85) 24%, rgba(0, 50, 59, 0.85) 51%, rgba(0, 33, 39, 0.85) 100%); */
+
     --foreground: #131313;
   }
 }
@@ -38,6 +50,11 @@ body {
 
 .transition-common {
   transition: all ease-out 0.25s;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 @layer utilities {
